@@ -383,7 +383,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/02/quic/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/02/quic1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Finn Cheong">
@@ -402,7 +402,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/02/quic/" itemprop="url">quic</a></h1>
+                <a class="post-title-link" href="/2018/03/02/quic1/" itemprop="url">QUIC I</a></h1>
         
 
         <div class="post-meta">
@@ -454,7 +454,17 @@
       
         
           
-            
+            <h2 id="QUIC"><a href="#QUIC" class="headerlink" title="QUIC"></a>QUIC</h2><p>QUIC(Quick UDP Internet Connections)，QUIC实际就是基于UDP实现的可靠传输协议，包含了多种控制算法，其中最主要的如bbr、cubic等，当然可以根据具体的网络需求进行不同的切换。在QUIC中，基于逻辑的channel、stream和connect等设计，保证了QUIC可以和tcp一样完成有序可靠的重传。</p>
+<hr>
+<h2 id="QUIC-的优势在哪儿"><a href="#QUIC-的优势在哪儿" class="headerlink" title="QUIC 的优势在哪儿"></a>QUIC 的优势在哪儿</h2><ol>
+<li>QUIC 相较于TCP，QUIC在既有缓存的情况下，可以实现0 RTT的握手</li>
+<li>队头拥塞避免</li>
+<li>对于连接的迁移</li>
+<li>向前纠错的支持</li>
+<li>拥塞控制算法(当然，目前大多数linux都已经支持BBR)</li>
+</ol>
+<hr>
+<h3 id="关于0RTT握手"><a href="#关于0RTT握手" class="headerlink" title="关于0RTT握手"></a>关于0RTT握手</h3>
           
         
       
