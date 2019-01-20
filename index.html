@@ -202,7 +202,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -212,7 +212,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -278,7 +278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/05/thread-and-greed-think/" itemprop="url">C++异常机制</a></h1>
+                <a class="post-title-link" href="/2018/11/05/thread-and-greed-think/" itemprop="url">关于线程</a></h1>
         
 
         <div class="post-meta">
@@ -288,7 +288,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-05T17:09:06+08:00">
                 2018-11-05
@@ -330,19 +330,11 @@
       
         
           
-            <h1 id="C-异常机制"><a href="#C-异常机制" class="headerlink" title="C++异常机制"></a>C++异常机制</h1><p>谈异常机制之前，先看一些关于线程的概念</p>
-<hr>
-<h4 id="Green-Threads"><a href="#Green-Threads" class="headerlink" title="Green Threads"></a>Green Threads</h4><p>green threads 是相对于native threads而言的，实际的green threads是依赖于jvm或者其他实现的，不论有多少，系统都认为它只是一条native thread，不能同时调度到不同的cpu中进行处理，现实意义上讲不能实现真正意义上的并行，而后出现了1:1的线程模型，Green Thread的线程概念就逐渐淡出。</p>
+            <h1 id="关于C-线程"><a href="#关于C-线程" class="headerlink" title="关于C++线程"></a>关于C++线程</h1><h4 id="Green-Threads"><a href="#Green-Threads" class="headerlink" title="Green Threads"></a>Green Threads</h4><p>green threads 是相对于native threads而言的，实际的green threads是依赖于jvm或者其他实现的，不论有多少，系统都认为它只是一条native thread，不能同时调度到不同的cpu中进行处理，现实意义上讲不能实现真正意义上的并行，而后出现了1:1的线程模型，Green Thread的线程概念就逐渐淡出。</p>
 <hr>
 <h4 id="Fibers-and-Coroutine"><a href="#Fibers-and-Coroutine" class="headerlink" title="Fibers and Coroutine"></a>Fibers and Coroutine</h4><p>纤程、微线程，就是轻量版的线程，如同线程对于进程而言。纤程的优点显而易见，无需线程的开销、上下文切换、变量加锁等，轻量使其比线程的更快更有优势，目前在lua和python均开始支持。<br>为了避免引入第三方的线程库，有些编程语言引入了协程——Coroutine的概念，在语法层面实现了纤程的功能。</p>
 <hr>
 <h4 id="Native-Threads"><a href="#Native-Threads" class="headerlink" title="Native Threads"></a>Native Threads</h4><p>Native Thread 就是我们一般意义上的线程概念，cpu的最小调度单元(green thread 与 fibers都是基于第三分库或者jvm实现的，底层依然是线程的实现)</p>
-<ul>
-<li>一般方法的调用与返回</li>
-<li>C++异常方法的调用与返回</li>
-<li>栈回退</li>
-<li>异常块捕捉</li>
-</ul>
 
           
         
@@ -420,7 +412,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-02T19:35:05+08:00">
                 2018-03-02
@@ -539,7 +531,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-22T15:31:48+08:00">
                 2017-11-22
@@ -666,7 +658,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-09T21:05:14+08:00">
                 2016-10-09
@@ -804,7 +796,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-30T14:05:14+08:00">
                 2016-09-30
@@ -953,7 +945,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-25T10:05:14+08:00">
                 2016-09-25
@@ -1093,7 +1085,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">6</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -1106,7 +1098,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -1169,7 +1161,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
