@@ -259,130 +259,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/05/thread-and-greed-think/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Finn Cheong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AiTel">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/05/thread-and-greed-think/" itemprop="url">关于线程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-05T17:09:06+08:00">
-                2018-11-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="关于C-线程"><a href="#关于C-线程" class="headerlink" title="关于C++线程"></a>关于C++线程</h1><h4 id="Green-Threads"><a href="#Green-Threads" class="headerlink" title="Green Threads"></a>Green Threads</h4><p>green threads 是相对于native threads而言的，实际的green threads是依赖于jvm或者其他实现的，不论有多少，系统都认为它只是一条native thread，不能同时调度到不同的cpu中进行处理，现实意义上讲不能实现真正意义上的并行，而后出现了1:1的线程模型，Green Thread的线程概念就逐渐淡出。</p>
-<hr>
-<h4 id="Fibers-and-Coroutine"><a href="#Fibers-and-Coroutine" class="headerlink" title="Fibers and Coroutine"></a>Fibers and Coroutine</h4><p>纤程、微线程，就是轻量版的线程，如同线程对于进程而言。纤程的优点显而易见，无需线程的开销、上下文切换、变量加锁等，轻量使其比线程的更快更有优势，目前在lua和python均开始支持。<br>为了避免引入第三方的线程库，有些编程语言引入了协程——Coroutine的概念，在语法层面实现了纤程的功能。</p>
-<hr>
-<h4 id="Native-Threads"><a href="#Native-Threads" class="headerlink" title="Native Threads"></a>Native Threads</h4><p>Native Thread 就是我们一般意义上的线程概念，cpu的最小调度单元(green thread 与 fibers都是基于第三分库或者jvm实现的，底层依然是线程的实现)</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/02/quic1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1094,7 +970,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
