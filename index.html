@@ -202,7 +202,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -212,7 +212,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -288,7 +288,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-05T17:09:06+08:00">
                 2018-11-05
@@ -430,7 +430,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-05T17:09:06+08:00">
                 2018-11-05
@@ -554,7 +554,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-02T19:35:05+08:00">
                 2018-03-02
@@ -606,7 +606,11 @@
 <li>拥塞控制算法(当然，目前大多数linux都已经支持BBR)</li>
 </ol>
 <hr>
-<h3 id="关于0RTT握手"><a href="#关于0RTT握手" class="headerlink" title="关于0RTT握手"></a>关于0RTT握手</h3>
+<h3 id="关于0RTT握手"><a href="#关于0RTT握手" class="headerlink" title="关于0RTT握手"></a>关于0RTT握手</h3><p>0RTT，意思是当前无须产生握手操作，立即可以开始发送数据。<br>QUIC是如何实现0RTT的？首先在无任何缓存情况下，QUIC是无法实现0RTT的。<br>先来看一下熟悉的1RTT连接：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">client-&gt;server: syn</div><div class="line">server-&gt;client: syn/ack</div></pre></td></tr></table></figure></p>
+<p>如果涉及到密钥交换，如https，握手过程应该是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">client-&gt;server: syn</div><div class="line">server-&gt;client: syn/ack</div><div class="line">client-&gt;server: client hello</div><div class="line">server-&gt;client: server hello、certificate、exchange key...</div><div class="line">client-&gt;server: certificate、exchange key、change finnish...</div><div class="line">server-&gt;client: change finnish</div><div class="line">client-&gt;server: send data</div></pre></td></tr></table></figure></p>
+<p>故而这样一趟下来，将花费3个RTT。</p>
+<p>首先，明确QUIC握手采用的是DH算法。<br>待续</p>
+
           
         
       
@@ -683,7 +687,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-22T15:31:48+08:00">
                 2017-11-22
@@ -810,7 +814,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-09T21:05:14+08:00">
                 2016-10-09
@@ -948,7 +952,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-30T14:05:14+08:00">
                 2016-09-30
@@ -1097,7 +1101,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-25T10:05:14+08:00">
                 2016-09-25
@@ -1237,7 +1241,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">7</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -1250,7 +1254,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -1313,7 +1317,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

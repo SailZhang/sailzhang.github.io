@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="linux," />
 
 
 
@@ -95,12 +95,13 @@
 
 
 <meta name="description" content="QUICQUIC(Quick UDP Internet Connections)，QUIC实际就是基于UDP实现的可靠传输协议，包含了多种控制算法，其中最主要的如bbr、cubic等，当然可以根据具体的网络需求进行不同的切换。在QUIC中，基于逻辑的channel、stream和connect等设计，保证了QUIC可以和tcp一样完成有序可靠的重传。  QUIC 的优势在哪儿 QUIC 相较于TC">
+<meta name="keywords" content="linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="QUIC I">
 <meta property="og:url" content="http://yoursite.com/2018/03/02/quic1/index.html">
 <meta property="og:site_name" content="AiTel">
 <meta property="og:description" content="QUICQUIC(Quick UDP Internet Connections)，QUIC实际就是基于UDP实现的可靠传输协议，包含了多种控制算法，其中最主要的如bbr、cubic等，当然可以根据具体的网络需求进行不同的切换。在QUIC中，基于逻辑的channel、stream和connect等设计，保证了QUIC可以和tcp一样完成有序可靠的重传。  QUIC 的优势在哪儿 QUIC 相较于TC">
-<meta property="og:updated_time" content="2019-03-10T09:18:18.550Z">
+<meta property="og:updated_time" content="2019-03-10T09:54:15.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="QUIC I">
 <meta name="twitter:description" content="QUICQUIC(Quick UDP Internet Connections)，QUIC实际就是基于UDP实现的可靠传输协议，包含了多种控制算法，其中最主要的如bbr、cubic等，当然可以根据具体的网络需求进行不同的切换。在QUIC中，基于逻辑的channel、stream和connect等设计，保证了QUIC可以和tcp一样完成有序可靠的重传。  QUIC 的优势在哪儿 QUIC 相较于TC">
@@ -204,7 +205,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -214,7 +215,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -288,7 +289,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-02T19:35:05+08:00">
                 2018-03-02
@@ -338,7 +339,11 @@
 <li>拥塞控制算法(当然，目前大多数linux都已经支持BBR)</li>
 </ol>
 <hr>
-<h3 id="关于0RTT握手"><a href="#关于0RTT握手" class="headerlink" title="关于0RTT握手"></a>关于0RTT握手</h3>
+<h3 id="关于0RTT握手"><a href="#关于0RTT握手" class="headerlink" title="关于0RTT握手"></a>关于0RTT握手</h3><p>0RTT，意思是当前无须产生握手操作，立即可以开始发送数据。<br>QUIC是如何实现0RTT的？首先在无任何缓存情况下，QUIC是无法实现0RTT的。<br>先来看一下熟悉的1RTT连接：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">client-&gt;server: syn</div><div class="line">server-&gt;client: syn/ack</div></pre></td></tr></table></figure></p>
+<p>如果涉及到密钥交换，如https，握手过程应该是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">client-&gt;server: syn</div><div class="line">server-&gt;client: syn/ack</div><div class="line">client-&gt;server: client hello</div><div class="line">server-&gt;client: server hello、certificate、exchange key...</div><div class="line">client-&gt;server: certificate、exchange key、change finnish...</div><div class="line">server-&gt;client: change finnish</div><div class="line">client-&gt;server: send data</div></pre></td></tr></table></figure></p>
+<p>故而这样一趟下来，将花费3个RTT。</p>
+<p>首先，明确QUIC握手采用的是DH算法。<br>待续</p>
+
       
     </div>
     
@@ -352,6 +357,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+        </div>
       
 
       
@@ -428,10 +439,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -452,7 +463,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">7</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -465,7 +476,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -544,7 +555,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
