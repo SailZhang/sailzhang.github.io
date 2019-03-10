@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="linux," />
 
 
 
@@ -94,13 +94,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="##使用perf 首先需要linux支持使用perf命令，可以以下命令进行安装  sudo apt-get install linux-tools-common linux-tools-generic linux-tools-uname -r  在perf中可以用perf stat对某个进程进行分析  perf list   可以列出所有的事件采集点 ##画火焰图  perf record -a">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux 性能调优">
+<meta property="og:url" content="http://yoursite.com/2018/11/05/perf/index.html">
 <meta property="og:site_name" content="AiTel">
-<meta property="og:updated_time" content="2019-03-10T09:18:18.551Z">
+<meta property="og:description" content="##使用perf 首先需要linux支持使用perf命令，可以以下命令进行安装  sudo apt-get install linux-tools-common linux-tools-generic linux-tools-uname -r  在perf中可以用perf stat对某个进程进行分析  perf list   可以列出所有的事件采集点 ##画火焰图  perf record -a">
+<meta property="og:updated_time" content="2019-03-10T09:23:02.332Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
+<meta name="twitter:title" content="linux 性能调优">
+<meta name="twitter:description" content="##使用perf 首先需要linux支持使用perf命令，可以以下命令进行安装  sudo apt-get install linux-tools-common linux-tools-generic linux-tools-uname -r  在perf中可以用perf stat对某个进程进行分析  perf list   可以列出所有的事件采集点 ##画火焰图  perf record -a">
 
 
 
@@ -129,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/05/perf/"/>
 
 
 
 
 
-  <title>tags | AiTel</title>
+  <title>linux 性能调优 | AiTel</title>
   
 
 
@@ -246,40 +250,166 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/05/perf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Finn Cheong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AiTel">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                Insgesamt 2 Tags
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/iOS/" style="font-size: 12px; color: #ccc">iOS</a> <a href="/tags/linux/" style="font-size: 12px; color: #ccc">linux</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">linux 性能调优</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-05T17:09:06+08:00">
+                2018-11-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>##使用perf</p>
+<p>首先需要linux支持使用perf命令，可以以下命令进行安装</p>
+<blockquote>
+<p>sudo apt-get install linux-tools-common linux-tools-generic linux-tools-<code>uname -r</code></p>
+</blockquote>
+<p>在perf中可以用perf stat对某个进程进行分析</p>
+<blockquote>
+<p>perf list </p>
+</blockquote>
+<p>可以列出所有的事件采集点</p>
+<p>##画火焰图</p>
+<blockquote>
+<p>perf record -a -p pid -g</p>
+</blockquote>
+<p>-g 记录堆栈，-p指定perf的进程id</p>
+<blockquote>
+<p>perf script &gt; out.perf</p>
+</blockquote>
+<p>将相关信息dump到out.perf, 然后</p>
+<blockquote>
+<p>git clone –depth 1 <a href="https://github.com/brendangregg/FlameGraph.git" target="_blank" rel="external">https://github.com/brendangregg/FlameGraph.git</a><br>stackcollapse-perf.pl out.perf &gt; out.folded<br>flamegraph.pl out.folded &gt; out.svg</p>
+</blockquote>
+<p>具体的参数参见项目FlameGraph所约定的参数，out.svg即是我们所需要的火焰图</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/05/thread-and-greed-think/" rel="next" title="关于线程">
+                <i class="fa fa-chevron-left"></i> 关于线程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -492,10 +622,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
